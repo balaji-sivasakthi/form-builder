@@ -1,6 +1,3 @@
-// LogicalOperatorComponent.jsx
-import React from 'react';
-
 const LogicalOperatorComponent = ({ operators, onSelectOperator }:any) => {
   return (
     <div className='flex justify-center items-center'>

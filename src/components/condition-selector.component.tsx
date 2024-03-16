@@ -1,6 +1,3 @@
-// ConditionSelectorComponent.jsx
-import React from 'react';
-
 const ConditionSelectorComponent = ({ conditions, onSelectCondition }:any) => {
   return (
     <div className='flex justify-center items-center'>

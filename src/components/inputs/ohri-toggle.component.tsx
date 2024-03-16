@@ -1,6 +1,3 @@
-// components/ToggleComponent.jsx
-import React from 'react';
-
 const OHRIToggle = ({ id, label, checked, onChange }: any) => {
   return (
     <div className='flex '>

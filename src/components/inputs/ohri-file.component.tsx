@@ -1,5 +1,5 @@
 // components/FileInputComponent.jsx
-import React from 'react';
+
 
 const OHRIFile = ({ id, label, onChange }:any) => {
   return (

@@ -1,5 +1,5 @@
 // components/RadioGroupComponent.jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const OHRIRadio = ({ id, label, options, selectedValue, onChange }: any) => {
   const initalValues = [

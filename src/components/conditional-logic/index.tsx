@@ -2,20 +2,18 @@ import { useState } from 'react';
 import { whenConditions, thenConditions } from '../../constants/conditions';
 import { useForm, Controller } from 'react-hook-form';
 
-const ConditionComponent = ({ components, id, schema, setSchema }: any) => {
+const ConditionComponent = () => {
     const { handleSubmit, control } = useForm();
     const [conditions, setConditions] = useState({})
     
     const onSubmit = (data: any) => {
         setConditions({ ...conditions, data });
-        const newSchema = {
-            "question":id,
-            "condition":data
-        };
-        setSchema({...schema, ...newSchema})
+        // const newSchema = {
+        //     "question":id,
+        //     "condition":data
+        // }; 
+        // setSchema({...schema, ...newSchema})
         console.log(conditions);
-        isHidden = true;
-        // Here you can generate your schema based on the form data
     };
 
     return (
@@ -24,7 +22,7 @@ const ConditionComponent = ({ components, id, schema, setSchema }: any) => {
                 <Controller
                     name="id"
                     control={control}
-                    defaultValue={id}
+                    defaultValue={""}
                     render={({ field }) => <input type="hidden" {...field} />}
                 />
                 <div className='flex border p-2'>
@@ -35,9 +33,9 @@ const ConditionComponent = ({ components, id, schema, setSchema }: any) => {
                         defaultValue=""
                         render={({ field }) => (
                             <select {...field}>
-                                {components.map((component: any) => (
+                                {/* {components.map((component: any) => (
                                     <option value={component.name}>{component.name}</option>
-                                ))}
+                                ))} */}
                             </select>
                         )}
                     />
@@ -47,7 +45,6 @@ const ConditionComponent = ({ components, id, schema, setSchema }: any) => {
                         defaultValue=""
                         render={({ field }) => (
                             <select {...field}>
-                                {/* TO DO: either option or manual input */}
                                 {whenConditions.map((condition) => (
                                     <option value={condition}>{condition}</option>
                                 ))}
@@ -81,15 +78,15 @@ const ConditionComponent = ({ components, id, schema, setSchema }: any) => {
                         defaultValue=""
                         render={({ field }) => (
                             <select {...field}>
-                                {components.map((component: any) => (
+                                {/* {components.map((component: any) => (
                                     <option value={component.name}>{component.name}</option>
-                                ))}
+                                ))} */}
                             </select>
                         )}
                     />
                 </div>
             </div>
-            <button type="submit">Submit</button>
+            <button className='mt-4 bg-green-500 p-2 rounded-lg hover:bg-green-600 text-white' type="submit">Submit</button>
         </form>
     );
 };

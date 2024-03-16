@@ -1,6 +1,3 @@
-// FieldSelectorComponent.jsx
-import React from 'react';
-
 const FieldSelectorComponent = ({ fields, onSelectField }:any) => {
   return (
     <div className='flex justify-center items-center w-full'>

@@ -12,7 +12,7 @@ export interface OHRIFormField{
         readOnly?: boolean;
         validators?: boolean;
         questionInfo?: string;
-    }
+    },
     setFields?:any,
     schema?:any;
     setSchema?:any;
@@ -25,17 +25,22 @@ export interface OHRIFormField{
     label?: string;
     type?: string;
     id?: string;
-    
 }
 
-// export interface OHRIFormFieldProps{
-//     question: OHRIFormField;
-//     onChange: (
-//         FieldName: string,
-        
-//         setError: string,
-//         setWarnings: string,
-//         isUnspecified: boolean,
-//     ) => void;
-    
-// }
+export interface IRule {
+    id: string;
+    logic: any;
+  }
+  export interface IComponent {
+    id: string;
+    type: string;
+    value: string;
+    rules?: IRule;
+  }
+  export interface IPage {
+    name: string;
+    components: IComponent[];
+  }
+  export interface IStore {
+    pages: IPage[];
+  }
